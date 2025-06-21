@@ -10,22 +10,43 @@ body {
     background-attachment: fixed; /* Arka planın sabit kalması */
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    /* Arka plana varsayılan bir renk veya görüntü atayın, JavaScript yüklenmeden önce beyaz kalmaması için */
+    background-color: #333; /* Varsayılan koyu bir arka plan */
 }
 
 header {
-    background-color: rgba(0, 0, 0, 0.6);
-    padding: 20px;
+    /* Eski arka plan rengini buradan kaldırıyoruz, çünkü kutucuğa vereceğiz */
+    padding: 20px 0; /* Sadece dikey padding veriyoruz */
     text-align: center;
     width: 100%;
     box-sizing: border-box;
-    position: relative; /* Başlığın konumu için */
-    z-index: 10; /* Diğer elemanların üzerinde olmasını sağlar */
+    position: relative;
+    z-index: 10;
+    display: flex; /* İçindeki kutucuğu ortalamak için */
+    justify-content: center; /* Yatayda ortalar */
+    align-items: center; /* Dikeyde ortalar */
+}
+
+#main-title-container {
+    background-color: rgba(0, 0, 0, 0.4); /* Yarı şeffaf arka plan */
+    backdrop-filter: blur(10px); /* Buzlu cam efekti */
+    -webkit-backdrop-filter: blur(10px); /* Safari desteği */
+    border-radius: 15px; /* Yuvarlak köşeler */
+    padding: 10px 30px; /* İç boşluklar, yazının boyutuna göre ayarlanabilir */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: inline-block; /* İçeriği kadar genişlemesini sağlar */
+    margin: 20px auto; /* Üstten ve alttan boşluk, yatayda ortalar */
+    max-width: 90%; /* Çok uzun başlıklar için maksimum genişlik */
+    box-sizing: border-box;
 }
 
 h1 {
-    margin: 0;
+    margin: 0; /* Kutucuğun padding'ini kullanmak için h1'in kendi margin'ini sıfırla */
     font-size: 2.5em;
-    transition: all 0.3s ease-in-out; /* Başlık animasyonu */
+    transition: all 0.3s ease-in-out;
+    white-space: nowrap; /* Başlığın tek satırda kalmasını sağlar */
+    overflow: hidden; /* Taşmayı gizler */
+    text-overflow: ellipsis; /* Taşarsa "..." ekler */
 }
 
 main {
@@ -69,7 +90,10 @@ main {
     justify-content: center; /* Ortaya hizalama */
     align-items: center; /* Dikeyde ortalama */
     width: fit-content; /* İçeriğe göre genişler */
+    /* Yatayda ortalamak için ek ayar yapabiliriz, JS ile de yapılabilir */
+    margin: 0 auto; /* Bu, inline-flex elemanını ortalamak için tam çalışmayabilir, parent'ına text-align: center; verebiliriz. */
 }
+
 
 .anime-box {
     flex-shrink: 0; /* Kutucukların küçülmesini engeller */
@@ -81,6 +105,7 @@ main {
     transition: transform 0.3s ease-in-out, width 0.3s ease-in-out, height 0.3s ease-in-out; /* Büyüme animasyonu */
     cursor: pointer;
     position: relative;
+    background-color: rgba(0, 0, 0, 0.2); /* Resim yüklenene kadar veya boş kutucuklar için hafif bir arka plan */
 }
 
 .anime-box img {
@@ -98,11 +123,4 @@ main {
     z-index: 5; /* Fare üzerindeyken diğerlerinin önüne gelsin */
 }
 
-footer {
-    background-color: rgba(0, 0, 0, 0.6);
-    padding: 15px;
-    text-align: center;
-    width: 100%;
-    box-sizing: border-box;
-    margin-top: auto; /* Footer'ı alta sabitler */
-}
+/* Footer ile ilgili tüm CSS kaldırıldı */
