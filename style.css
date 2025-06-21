@@ -66,7 +66,8 @@ main {
     padding-bottom: 20px; /* Kaydırma çubuğu için boşluk */
     -webkit-overflow-scrolling: touch; /* iOS'ta akıcı kaydırma */
     scrollbar-width: thin; /* Firefox için kaydırma çubuğu inceliği */
-    scrollbar-color: rgba(255, 255, 255, 0.5) transparent; /* Firefox için kaydırma çubuğu rengi */
+    scrollbar-color: rgba(255, 255, 255, 0.5) transparent;
+    scroll-behavior: smooth; /* Ekledik: Yumuşak kaydırma için *//* Firefox için kaydırma çubuğu rengi */
 }
 
 /* Chrome, Safari ve Edge için kaydırma çubuğu stilizasyonu */
