@@ -1,1 +1,108 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    transition: background-image 0.8s ease-in-out; /* Arka plan geçişi */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Arka planın sabit kalması */
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
 
+header {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative; /* Başlığın konumu için */
+    z-index: 10; /* Diğer elemanların üzerinde olmasını sağlar */
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5em;
+    transition: all 0.3s ease-in-out; /* Başlık animasyonu */
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    align-items: center; /* Kutucukları dikeyde ortalar */
+    justify-content: center; /* Yatayda ortalar */
+    padding: 20px 0; /* Üst ve alttan boşluk */
+    overflow: hidden; /* Dışarı taşan içeriği gizler */
+}
+
+.carousel-container {
+    width: 90%; /* Konteyner genişliği */
+    max-width: 1200px; /* Maksimum genişlik */
+    overflow-x: auto; /* Yatay kaydırma çubuğunu göster */
+    white-space: nowrap; /* İçeriklerin aynı satırda kalmasını sağlar */
+    padding-bottom: 20px; /* Kaydırma çubuğu için boşluk */
+    -webkit-overflow-scrolling: touch; /* iOS'ta akıcı kaydırma */
+    scrollbar-width: thin; /* Firefox için kaydırma çubuğu inceliği */
+    scrollbar-color: rgba(255, 255, 255, 0.5) transparent; /* Firefox için kaydırma çubuğu rengi */
+}
+
+/* Chrome, Safari ve Edge için kaydırma çubuğu stilizasyonu */
+.carousel-container::-webkit-scrollbar {
+    height: 8px; /* Kaydırma çubuğu yüksekliği */
+}
+
+.carousel-container::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.5); /* Kaydırma çubuğu tutamacının rengi */
+    border-radius: 10px;
+}
+
+.carousel-container::-webkit-scrollbar-track {
+    background: transparent; /* Kaydırma çubuğu yolunun rengi */
+}
+
+.anime-carousel {
+    display: inline-flex; /* Kutucukları yan yana dizer */
+    gap: 30px; /* Kutucuklar arası boşluk */
+    padding: 10px; /* İç boşluk */
+    justify-content: center; /* Ortaya hizalama */
+    align-items: center; /* Dikeyde ortalama */
+    width: fit-content; /* İçeriğe göre genişler */
+}
+
+.anime-box {
+    flex-shrink: 0; /* Kutucukların küçülmesini engeller */
+    width: 300px;
+    height: 450px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease-in-out, width 0.3s ease-in-out, height 0.3s ease-in-out; /* Büyüme animasyonu */
+    cursor: pointer;
+    position: relative;
+}
+
+.anime-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Resmi kutucuğa sığdırır */
+    display: block;
+    transition: transform 0.3s ease-in-out; /* Resmin büyüme animasyonu */
+}
+
+.anime-box:hover {
+    transform: scale(1.1); /* Kutucuğu biraz büyüt */
+    width: 330px; /* Yeni genişlik */
+    height: 495px; /* Yeni yükseklik */
+    z-index: 5; /* Fare üzerindeyken diğerlerinin önüne gelsin */
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 15px;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: auto; /* Footer'ı alta sabitler */
+}
