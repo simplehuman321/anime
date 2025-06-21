@@ -1,5 +1,5 @@
-Naruto Uzumaki/naruto-kutucuk.jpg/naruto-arka-plan.jpg
-Attack on Titan/aot-kutucuk.jpg/aot-arka-plan.jpg
-My Hero Academia/mha-kutucuk.jpg/mha-arka-plan.jpg
-One Piece/onepiece-kutucuk.jpg/onepiece-arka-plan.jpg
-Demon Slayer/demonslayer-kutucuk.jpg/demonslayer-arka-plan.jpg
+Naruto Uzumaki/1.jpg/2.jpg
+Attack on Titan/3.jpg/4.jpg
+My Hero Academia/5.jpg/6.jpg
+One Piece/7.jpg/8.jpg
+Demon Slayer/9.jpg/0.jpg
